@@ -54,7 +54,7 @@ app.delete("/delete/:id",async(req,res)=>{
     }
 })
 
-app.pust("/edit/:id",async(req,res)=>{
+app.post("/edit/:id",async(req,res)=>{
     try {
         const editUser=await User.findByIdAndUpdate(req.params.id,{...req.body},{new:true} )
         res.send(editUser)
@@ -67,5 +67,6 @@ app.pust("/edit/:id",async(req,res)=>{
 
 
 app.listen(PORT,err=>err?console.log(err):console.log(`server is runing on PORT ${PORT}`))
+
 
 
